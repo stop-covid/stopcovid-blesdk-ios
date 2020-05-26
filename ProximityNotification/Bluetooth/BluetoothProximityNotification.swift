@@ -98,6 +98,7 @@ final class BluetoothProximityNotification: ProximityNotification {
             self.dispatchQueue.async {
                 self.scannedPeripheralForPeripheralIdentifier.removeExpiredValues()
                 self.bluetoothProximityPayloadForPeripheralIdentifier.removeExpiredValues()
+                self.connectionDateForPayloadIdentifier.removeExpiredValues()
             }
         }
         
