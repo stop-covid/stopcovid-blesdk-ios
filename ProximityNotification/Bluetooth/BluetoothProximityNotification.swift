@@ -159,4 +159,10 @@ extension BluetoothProximityNotification: BluetoothCentralManagerDelegate {
             }
         }
     }
+    
+    func bluetoothCentralManager(_ centralManager: BluetoothCentralManagerProtocol,
+                                 didNotFindServiceForPeripheralIdentifier peripheralIdentifier: UUID) {
+        scannedPeripheralForPeripheralIdentifier.removeValue(forKey: peripheralIdentifier)
+        bluetoothProximityPayloadForPeripheralIdentifier.removeValue(forKey: peripheralIdentifier)
+    }
 }
